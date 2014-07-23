@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>SSW.Data.EF</id>
+		<version>$version$</version>
+		<title>SSW.Data.EF</title>
+		<authors>Igor Goldobin</authors>
+		<iconUrl>http://www.gravatar.com/avatar/81d58a12bc544f1b4ea6f48200f665e0.png</iconUrl>
+		<owners>SSW</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Set of classes that implement unit of work and repository patterns.</description>
+		<copyright />
+		<language>en-AU</language>
+		<tags>EF</tags>
+
+		<dependencies>
+			<dependency id="EntityFramework" version="6.0.0" />
+			<dependency id="SSW.Data.Entities" version="1.0.0" />
+		</dependencies>
+	</metadata>
+</package>

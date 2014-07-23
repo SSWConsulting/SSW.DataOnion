@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>SSW.Data.Entities</id>
+		<version>$version$</version>
+		<title>SSW.Data.Entities</title>
+		<authors>Igor Goldobin</authors>
+		<iconUrl>http://www.gravatar.com/avatar/81d58a12bc544f1b4ea6f48200f665e0.png</iconUrl>
+		<owners>SSW</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Set of common entities and interfaces to be used for domain model.</description>
+		<copyright />
+		<language>en-AU</language>
+		<tags>EF</tags>
+	</metadata>
+</package>
