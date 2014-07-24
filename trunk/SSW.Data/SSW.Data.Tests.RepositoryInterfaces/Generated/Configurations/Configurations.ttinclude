@@ -1,14 +1,13 @@
 ﻿<#+
 public static partial class Configurations
 {
-	// OPTIONAL BASE TYPE FILTER - LEAVE BLANK IF NOT USED
+	//Generator configurations
 	public const string BaseEntityClass = @"BaseEntity"; // optional base entity to filter only entities that inherit from specific base class
 	public const string BaseEntityClassDll = @"SSW.Data.Entities.dll"; // optional base entity dll to filter only entities that inherit from specific base class
-	///////////////////////////////////////////
-	
 	public const string DomainModelProjectDll = @"SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
 	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.DomainModel.Entities"; // custom domain model namespace. ususally the same as dll name
-	public const string RepositoryInterfacesProjectNamespace = @"SSW.Data.Tests.Repositories"; // namespace to be used by generated repository interfaces
+	public const string DbContextName = @"TestDbContext"; // name of your db context
+	public const string DataProjectNamespace = @"SSW.Data"; // namespace to be used by generated db context
 }
 #>
 

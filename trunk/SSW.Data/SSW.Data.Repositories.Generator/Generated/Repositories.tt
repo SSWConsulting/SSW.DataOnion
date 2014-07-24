@@ -25,8 +25,10 @@ namespace <#=Configurations.RepositoriesProjectNamespace#>
 
 	if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
 	{
+		var baseEntityAssembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
+		Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
 		entityTypes = assembly.GetTypes()
-                        .Where(t => Type.GetType(Configurations.BaseEntityClass).IsAssignableFrom(t) && t != Type.GetType(Configurations.BaseEntityClass) && !t.IsAbstract)
+                        .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
                         .ToArray();
 	} 
 	else 
