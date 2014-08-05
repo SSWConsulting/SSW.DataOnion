@@ -57,15 +57,16 @@
       <HintPath>..\packages\SSW.Common.1.0.5317.31877\lib\net45\SSW.Common.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.EF">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5317.32108\lib\net45\SSW.Data.EF.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.EF.1.0.5330.22723\lib\net45\SSW.Data.EF.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SSW.Data.Entities, Version=1.0.5317.30052, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SSW.Data.Entities.1.0.5317.30052\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SSW.Data.EF.1.0.5317.32108\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+    <Reference Include="SSW.Data.Interfaces">
+      <HintPath>..\packages\SSW.Data.EF.1.0.5330.22723\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

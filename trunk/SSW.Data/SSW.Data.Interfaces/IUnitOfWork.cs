@@ -1,6 +1,8 @@
 ﻿namespace SSW.Data.Interfaces
 {
-    public interface IUnitOfWork
+    using System;
+
+    public interface IUnitOfWork : IDisposable
     {
         void SaveChanges();
     }

@@ -2,19 +2,20 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Validation;
     using System.Data.SqlClient;
 
-    using SSW.Data.Interfaces;
     using SSW.Common;
     using SSW.Common.Exceptions;
+    using SSW.Data.Interfaces;
 
     public class UnitOfWork : IUnitOfWork
     {
         IEnumerable<IDbContextManager> contextList;
 
         private readonly ILogger logger;
+
+        private bool disposed;
 
         public UnitOfWork(IEnumerable<IDbContextManager> contextList, ILogger logger)
         {
@@ -66,12 +67,29 @@
             }
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    foreach (var contextManager in this.contextList)
+                    {
+                        if (contextManager != null)
+                        {
+                            contextManager.Dispose();
+                        }
+                    }
+                }
+
+                this.disposed = true;
+            }
+        }
+
         public void Dispose()
         {
-            foreach (var contextManager in this.contextList)
-            {
-                contextManager.Dispose();
-            }
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 
