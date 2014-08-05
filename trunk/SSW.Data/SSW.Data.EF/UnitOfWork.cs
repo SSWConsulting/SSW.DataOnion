@@ -13,14 +13,13 @@
     {
         IEnumerable<IDbContextManager> contextList;
 
-        private readonly ILogger logger;
+        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         private bool disposed;
 
-        public UnitOfWork(IEnumerable<IDbContextManager> contextList, ILogger logger)
+        public UnitOfWork(IEnumerable<IDbContextManager> contextList)
         {
             this.contextList = contextList;
-            this.logger = logger;
         }
 
         public void SaveChanges()
@@ -37,13 +36,13 @@
             }
             catch (SqlException sqlEx)
             {
-                this.logger.Error(sqlEx.Message, sqlEx);
+                logger.Error(sqlEx.Message, sqlEx);
                 var ex = sqlEx.ToDataOperationException();
                 throw ex;
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException due)
             {
-                this.logger.Error(due.Message, due);
+                logger.Error(due.Message, due);
                 var ex = due.ToDataOperationException();
                 throw ex;
 
@@ -54,7 +53,7 @@
                 {
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
-                        this.logger.Error(string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage), dbEx);
+                        logger.Error(string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage), dbEx);
                     }
                 }
 
@@ -62,7 +61,7 @@
             }
             catch (Exception ex)
             {
-                this.logger.Error(ex.Message, ex);
+                logger.Error(ex.Message, ex);
                 throw;
             }
         }
