@@ -11,8 +11,15 @@
     /// Key type.
     /// </typeparam>
     public class BaseEntity<T> : IDeletableEntity
-
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseEntity{T}"/> class.
+        /// </summary>
+        public BaseEntity()
+        {
+            this.RowGuid = Guid.NewGuid();
+        }
+
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
@@ -54,6 +61,12 @@
         /// </summary>
         [Timestamp] 
         public byte[] TimeStamp { get; set; }
+
+        /// <summary>
+        /// Gets or sets the row GUID.
+        /// </summary>
+        /// <value>The row GUID.</value>
+        public Guid RowGuid { get; set; }
     }
 
     /// <summary>
