@@ -4,11 +4,9 @@
 
     public class ContactDetails : BaseEntity
     {
-        [Required]
         [MaxLength(300)]
         public virtual string Email { get; set; }
 
-        [Required]
         [MaxLength(50)]
         public virtual string Phone { get; set; }
 

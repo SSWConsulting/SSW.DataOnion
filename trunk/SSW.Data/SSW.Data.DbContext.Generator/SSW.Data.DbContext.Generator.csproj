@@ -51,6 +51,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,9 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DropCreateInitializer.cs.pp" />
+    <Content Include="DbContext.cs.pp" />
+    <Content Include="DbContextFactory.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EntityConfigurations\placeholder.txt" />
+    <Content Include="readme.txt" />
     <None Include="App.config" />
     <Content Include="Generated\Configurations\DbContextConfigurations.ttinclude" />
     <Content Include="Generated\DbContext.tt">

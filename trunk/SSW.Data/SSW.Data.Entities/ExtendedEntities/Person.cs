@@ -8,11 +8,9 @@
     /// </summary>
     public class Person : BaseEntity, IPersonEntity
     {
-        [Required]
         [MaxLength(300)]
         public string FirstName { get; set; }
 
-        [Required]
         [MaxLength(300)]
         public string LastName { get; set; }
 

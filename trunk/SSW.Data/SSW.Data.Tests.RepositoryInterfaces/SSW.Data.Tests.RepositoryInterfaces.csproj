@@ -85,11 +85,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generated\DbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\RepositoryInterfaces.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,10 +96,6 @@
     <None Include="App.config" />
     <None Include="Generated\Configurations\Configurations.ttinclude" />
     <None Include="Generated\Configurations\RepositoryInterfacesConfigurations.ttinclude" />
-    <None Include="Generated\DbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DbContext.cs</LastGenOutput>
-    </None>
     <None Include="Generated\RepositoryInterfaces.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RepositoryInterfaces.cs</LastGenOutput>

@@ -8,7 +8,6 @@
         /// Gets or sets the address line1.
         /// </summary>
         /// <value>The address line1.</value>
-        [Required]
         public string AddressLine1 { get; set; }
 
         /// <summary>
@@ -21,28 +20,24 @@
         /// Gets or sets the suburb.
         /// </summary>
         /// <value>The suburb.</value>
-        [Required]
         public string Suburb { get; set; }
 
         /// <summary>
         /// Gets or sets the state.
         /// </summary>
         /// <value>The state.</value>
-        [Required]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or sets the postcode.
         /// </summary>
         /// <value>The postcode.</value>
-        [Required]
         public string Postcode { get; set; }
 
         /// <summary>
         /// Gets or sets the country.
         /// </summary>
         /// <value>The country.</value>
-        [Required]
         public string Country { get; set; }
 
         /// <summary>

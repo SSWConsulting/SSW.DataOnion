@@ -10,7 +10,6 @@
         /// <summary>
         /// Gets or sets the name of the entity.
         /// </summary>
-        [Required]
         [MaxLength(500)]
         public string Name { get; set; }
 

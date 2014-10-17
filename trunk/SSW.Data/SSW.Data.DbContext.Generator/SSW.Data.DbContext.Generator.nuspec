@@ -12,7 +12,6 @@
 		<copyright />
 		<language>en-AU</language>
 		<tags>EF</tags>
-
 		<dependencies>
 			<dependency id="SSW.Data.Entities" version="1.0.0" />
 		</dependencies>
@@ -20,5 +19,7 @@
 
 	<files>
 		<file src="Generated*.*" target="Generated" />
+		<file src="EntityConfigurations*.*" target="EntityConfigurations" />
+		<file src="readme.txt" target="readme.txt" />
 	</files>
 </package>
