@@ -18,6 +18,6 @@ to the bin folder). Ideally you would have the following class library project s
 --YourNamespace.Data (current project)
 --YourNamespace.WebUI
 
-2. DbContext.cs, DbContextFactory.cs and DropCreateInitializer.cs
+2. DbContext.cs
 
 Update all references to "YourDbContext" and "YourConnectionStringName"

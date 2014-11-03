@@ -1,4 +1,4 @@
-﻿<#+
+<#+
 public static partial class Configurations
 {
 	// OPTIONAL BASE TYPE FILTER - LEAVE BLANK IF NOT USED
@@ -6,10 +6,10 @@ public static partial class Configurations
 	public const string BaseEntityClassDll = @"SSW.Data.Entities.dll"; // optional base entity dll to filter only entities that inherit from specific base class
 	///////////////////////////////////////////
 	
-	public const string DomainModelProjectDll = @"SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
-	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.DomainModel.Entities"; // custom domain model namespace. ususally the same as dll name
-	public const string RepositoryInterfacesProjectNamespace = @"SSW.Data.Tests.RepositoryInterfaces"; // reference namespace for repository interfaces
-	public const string RepositoriesProjectNamespace = @"SSW.Data.Tests.Repositories"; // namespace to be used by generated repositories
+	public const string DomainModelProjectDll = @"SSW.Data.Tests.Integration.DomainModel.dll"; // dll file name for domain models
+	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.Integration.DomainModel.Entities"; // custom domain model namespace, usualy the same as dll name
+	public const string RepositoryInterfacesProjectNamespace = @"SSW.Data.Tests.Integration.RepositoryInterfaces"; // reference namespace for repository interfaces
+	public const string RepositoriesProjectNamespace = @"SSW.Data.Tests.Integration.Repositories"; // namespace to be used by generated repositories
 }
 #>
 

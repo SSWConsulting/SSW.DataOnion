@@ -46,45 +46,7 @@
         {
         }
 
-        /// <summary>
-        /// Saves pending changes. Populates date created and data modified fields
-        /// </summary>
-        /// <returns>
-        /// Number of records saved
-        /// </returns>
-        public override int SaveChanges()
-        {
-            var entities = ChangeTracker.Entries().Where(x => x.Entity is BaseEntity && (x.State == EntityState.Added || x.State == EntityState.Modified));
-
-            var currentUsername = HttpContext.Current != null && HttpContext.Current.User != null
-                ? HttpContext.Current.User.Identity.Name
-                : "system";
-
-            foreach (var entity in entities)
-            {
-                if (entity.State == EntityState.Added)
-                {
-                    ((BaseEntity)entity.Entity).DateCreated = DateTime.Now;
-                    ((BaseEntity)entity.Entity).CreatedBy = string.IsNullOrEmpty(((BaseEntity)entity.Entity).CreatedBy) ? currentUsername : ((BaseEntity)entity.Entity).CreatedBy;
-                }
-
-                ((BaseEntity)entity.Entity).LastModifiedDate = DateTime.Now;
-                ((BaseEntity)entity.Entity).LastModifiedBy = currentUsername;
-            }
-
-            int result;
-            try
-            {
-                result = base.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                ((IObjectContextAdapter)this).ObjectContext.Refresh(RefreshMode.ClientWins, ex.Entries.Select(entry => entry.Entity));
-                result = base.SaveChanges();
-            }
-
-            return result;
-        }
+        
 
         /// <summary>
         /// This method is called when the model for a derived context has been initialized,

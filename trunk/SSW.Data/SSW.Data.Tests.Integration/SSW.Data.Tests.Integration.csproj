@@ -63,25 +63,26 @@
       <HintPath>..\packages\SSW.Common.1.0.5317.31877\lib\net45\SSW.Common.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.DbContext.Generator">
-      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.1.5420.27094\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.1.5420.29151\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.EF">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5420.26550\lib\net45\SSW.Data.EF.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.EF.1.0.5420.29143\lib\net45\SSW.Data.EF.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Entities">
       <HintPath>..\packages\SSW.Data.Entities.1.0.5420.27860\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Interfaces">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5420.26550\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.EF.1.0.5420.29143\lib\net45\SSW.Data.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Repositories.Generator">
-      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5420.27099\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5420.29616\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.RepositoryInterfaces.Generator">
-      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5420.27871\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5420.29474\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -97,7 +98,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
-    <Compile Include="DropCreateInitializer.cs" />
     <Compile Include="Generated\DbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
