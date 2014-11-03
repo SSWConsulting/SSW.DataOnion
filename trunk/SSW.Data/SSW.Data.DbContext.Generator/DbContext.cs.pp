@@ -12,7 +12,7 @@
     using SSW.Data.Entities;
 
     /// <summary>
-    /// Database context
+    /// Database context - rename to match the dbcontext name in 
     /// </summary>
     public partial class YourDbContext : DbContext
     {
