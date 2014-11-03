@@ -9,22 +9,26 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #> 
-<#@ include file="Configurations\RepositoryInterfacesConfigurations.ttinclude" #>
+<#@ include file="Configurations\DbContextConfigurations.ttinclude" #>
 
-using <#=Configurations.DomainModelProjectNamespace#>;
-
-using SSW.Data.Interfaces;
-
-namespace <#=Configurations.RepositoryInterfacesProjectNamespace#>
+namespace <#=Configurations.DataProjectNamespace#>
 {
+	using System.Data.Entity;
+	using <#=Configurations.DomainModelProjectNamespace#>;
+
+	using SSW.Data.Entities;
+
+	public partial class <#=Configurations.DbContextName#>
+	{
 <#
 	Type[] entityTypes;
-	
-	var assembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
+
+	var proxyDomain = new ProxyDomain();
+	var assembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
 
 	if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
 	{
-		var baseEntityAssembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
+		var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
 		Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
 		entityTypes = assembly.GetTypes()
                         .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
@@ -38,11 +42,28 @@ namespace <#=Configurations.RepositoryInterfacesProjectNamespace#>
 	foreach (var entityType in entityTypes)	        
 	{
 #>
-	public partial interface I<#=entityType.Name#>Repository : IRepository<<#=entityType.Name#>>
-	{
-	}
+		public IDbSet<<#=entityType.Name#>> <#=entityType.Name#>s { get; set; }
+
 <#
 	}
 #>
+	}
 }
+
+<#+
+public class ProxyDomain : MarshalByRefObject
+{
+    public Assembly GetAssembly(string assemblyPath)
+    {
+        try
+        {
+            return Assembly.LoadFrom(assemblyPath);
+        }
+        catch (Exception ex)
+        {
+			throw new InvalidOperationException(ex.Message);
+        }
+    }
+}
+#>
 
