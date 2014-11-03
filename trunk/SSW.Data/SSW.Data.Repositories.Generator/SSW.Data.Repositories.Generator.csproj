@@ -87,6 +87,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Repositories.cs</LastGenOutput>
     </Content>
+    <None Include="CreatePackageAndPublish.bat" />
+    <None Include="CreatePackage.bat" />
     <None Include="packages.config" />
     <None Include="SSW.Data.Repositories.Generator.nuspec">
       <SubType>Designer</SubType>
