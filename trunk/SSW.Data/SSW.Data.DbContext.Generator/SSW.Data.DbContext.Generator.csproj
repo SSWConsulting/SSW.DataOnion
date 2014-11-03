@@ -41,12 +41,13 @@
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
-    <Reference Include="NuGet.Core, Version=2.8.50506.491, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="NuGet.Core, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NuGet.Core.2.8.2\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <HintPath>..\packages\NuGet.Core.2.8.3\lib\net40-Client\NuGet.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Entities">
-      <HintPath>..\packages\SSW.Data.Entities.1.0.5317.30052\lib\net45\SSW.Data.Entities.dll</HintPath>
+    <Reference Include="SSW.Data.Entities, Version=1.0.5332.26381, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.Entities.1.0.5332.26381\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -63,7 +64,6 @@
   <ItemGroup>
     <Content Include="DropCreateInitializer.cs.pp" />
     <Content Include="DbContext.cs.pp" />
-    <Content Include="DbContextFactory.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +71,6 @@
     <Content Include="readme.txt" />
     <None Include="App.config" />
     <Content Include="Generated\Configurations\DbContextConfigurations.ttinclude" />
-    <Content Include="Generated\DbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DbContext.cs</LastGenOutput>
-    </Content>
     <None Include="packages.config" />
     <None Include="SSW.Data.DbContext.Generator.nuspec">
       <SubType>Designer</SubType>
