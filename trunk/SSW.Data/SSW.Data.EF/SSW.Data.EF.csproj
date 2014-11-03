@@ -84,6 +84,7 @@
     <None Include="App.config" />
     <None Include="CreatePackage.bat" />
     <None Include="CreatePackageAndPublish.bat" />
+    <Compile Include="DropCreateInitializer.cs" />
     <None Include="packages.config" />
     <None Include="SSW.Data.EF.nuspec" />
   </ItemGroup>

@@ -37,6 +37,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.1.0.0\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NuGet.Core.2.8.3\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Common">
+      <HintPath>..\packages\SSW.Common.1.0.5317.31877\lib\net45\SSW.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.DbContext.Generator">
+      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.1.5420.27094\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.EF">
+      <HintPath>..\packages\SSW.Data.EF.1.0.5420.26550\lib\net45\SSW.Data.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.Entities">
+      <HintPath>..\packages\SSW.Data.Entities.1.0.5420.27860\lib\net45\SSW.Data.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.Interfaces">
+      <HintPath>..\packages\SSW.Data.EF.1.0.5420.26550\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.Repositories.Generator">
+      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5420.27099\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="SSW.Data.RepositoryInterfaces.Generator">
+      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5420.27871\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
@@ -53,16 +96,53 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DbContext.cs" />
+    <Compile Include="DropCreateInitializer.cs" />
+    <Compile Include="Generated\DbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Repositories.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repositories.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\RepositoryInterfaces.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterfaces.tt</DependentUpon>
+    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".nuget\nuget.config" />
     <None Include="App.config" />
+    <None Include="Generated\Configurations\DbContextConfigurations.ttinclude" />
+    <None Include="Generated\Configurations\RepositoriesConfigurations.ttinclude" />
+    <None Include="Generated\Configurations\RepositoryInterfacesConfigurations.ttinclude" />
+    <None Include="Generated\DbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbContext.cs</LastGenOutput>
+    </None>
+    <None Include="Generated\Repositories.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repositories.cs</LastGenOutput>
+    </None>
+    <None Include="Generated\RepositoryInterfaces.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RepositoryInterfaces.cs</LastGenOutput>
+    </None>
     <None Include="LocalPackages\UpdateLocalPackages.ps1" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityConfigurations\placeholder.txt" />
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
