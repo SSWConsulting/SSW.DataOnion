@@ -82,7 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="Generated\Configurations\RepositoriesConfigurations.ttinclude" />
+    <Content Include="Generated\Configurations\RepositoriesConfigurations.ttinclude.pp" />
     <Content Include="Generated\Repositories.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Repositories.cs</LastGenOutput>
