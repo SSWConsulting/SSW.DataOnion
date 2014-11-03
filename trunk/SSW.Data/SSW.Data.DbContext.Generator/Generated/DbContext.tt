@@ -22,12 +22,13 @@ namespace <#=Configurations.DataProjectNamespace#>
 	{
 <#
 	Type[] entityTypes;
-	
-	var assembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
+
+	var proxyDomain = new ProxyDomain();
+	var assembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
 
 	if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
 	{
-		var baseEntityAssembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
+		var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
 		Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
 		entityTypes = assembly.GetTypes()
                         .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
@@ -48,4 +49,21 @@ namespace <#=Configurations.DataProjectNamespace#>
 #>
 	}
 }
+
+<#+
+public class ProxyDomain : MarshalByRefObject
+{
+    public Assembly GetAssembly(string assemblyPath)
+    {
+        try
+        {
+            return Assembly.LoadFrom(assemblyPath);
+        }
+        catch (Exception ex)
+        {
+			throw new InvalidOperationException(ex.Message);
+        }
+    }
+}
+#>
 

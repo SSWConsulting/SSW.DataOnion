@@ -87,6 +87,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="Generated\Configurations\RepositoriesConfigurations.ttinclude" />
+    <Content Include="Generated\Repositories.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repositories.cs</LastGenOutput>
+    </Content>
+    <None Include="CreatePackageAndPublish.bat" />
+    <None Include="CreatePackage.bat" />
     <None Include="packages.config" />
     <None Include="SSW.Data.Repositories.Generator.nuspec">
       <SubType>Designer</SubType>
