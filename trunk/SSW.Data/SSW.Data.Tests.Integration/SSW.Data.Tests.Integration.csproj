@@ -37,6 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Effort">
+      <HintPath>..\packages\Effort.EF6.1.1.1\lib\net45\Effort.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +61,9 @@
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
+    <Reference Include="NMemory">
+      <HintPath>..\packages\NMemory.1.0.1\lib\net45\NMemory.dll</HintPath>
+    </Reference>
     <Reference Include="NuGet.Core, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NuGet.Core.2.8.3\lib\net40-Client\NuGet.Core.dll</HintPath>
@@ -66,23 +75,27 @@
       <HintPath>..\packages\SSW.Data.DbContext.Generator.1.1.5420.29151\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.EF">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5420.29143\lib\net45\SSW.Data.EF.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.EF.1.0.5421.18985\lib\net45\SSW.Data.EF.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Entities">
       <HintPath>..\packages\SSW.Data.Entities.1.0.5420.27860\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Interfaces">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5420.29143\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.EF.1.0.5421.18985\lib\net45\SSW.Data.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Repositories.Generator">
-      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5420.29616\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5421.19002\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.RepositoryInterfaces.Generator">
-      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5420.29474\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
+      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5421.18990\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="TestStack.BDDfy">
+      <HintPath>..\packages\TestStack.BDDfy.4.0.0\lib\NET40\TestStack.BDDfy.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -98,22 +111,28 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="DependencyResolution\IOC.cs" />
+    <Compile Include="DependencyResolution\TestModule.cs" />
+    <Compile Include="EffortConnectionFactory.cs" />
     <Compile Include="Generated\DbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DbContext.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\Repositories.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Repositories.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\RepositoryInterfaces.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryInterfaces.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ConfigurationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +162,12 @@
   <ItemGroup>
     <Content Include="EntityConfigurations\placeholder.txt" />
     <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSW.Data.Tests.DomainModel\SSW.Data.Tests.DomainModel.csproj">
+      <Project>{f6f5f9ba-feb2-482a-bba9-21068142860c}</Project>
+      <Name>SSW.Data.Tests.DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

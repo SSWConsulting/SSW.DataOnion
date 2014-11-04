@@ -14,34 +14,34 @@ namespace SSW.Data.Tests.Integration
     /// <summary>
     /// Database context - rename to match the dbcontext name in 
     /// </summary>
-    public partial class YourDbContext : DbContext
+    public partial class TestDbContext : DbContext
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="YourDbContext"/> class.
+        /// Initializes a new instance of the <see cref="TestDbContext"/> class.
         /// </summary>
-        public YourDbContext()
+        public TestDbContext()
             : base("name=YourConnectionStringName")
         {
             this.Configuration.LazyLoadingEnabled = true;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="YourDbContext" /> class.
+        /// Initializes a new instance of the <see cref="TestDbContext" /> class.
         /// </summary>
         /// <param name="connection">The connection.</param>
-        public YourDbContext(DbConnection connection)
+        public TestDbContext(DbConnection connection)
             : base(connection, true)
         {
             this.Configuration.LazyLoadingEnabled = true;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="YourDbContext"/> class.
+        /// Initializes a new instance of the <see cref="TestDbContext"/> class.
         /// </summary>
         /// <param name="connectionString">
         /// The connection string.
         /// </param>
-        public YourDbContext(string connectionString)
+        public TestDbContext(string connectionString)
             : base(connectionString)
         {
         }

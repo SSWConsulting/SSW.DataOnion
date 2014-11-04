@@ -75,6 +75,7 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DbContextManager.cs" />
+    <Compile Include="EffortConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlFileDbMigration.cs" />
     <Compile Include="UnitOfWork.cs" />

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace SSW.Data.EF
 {
     using System;
+    using System.Data;
+    using System.Data.Common;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
@@ -18,6 +20,8 @@ namespace SSW.Data.EF
 
         private readonly string connectionString;
 
+        private readonly DbConnection connection = null;
+
 
 
         public DbContextFactory(IDatabaseInitializer<T> dbInitializer, string connectionString)
@@ -26,7 +30,14 @@ namespace SSW.Data.EF
             this.connectionString = connectionString;
         }
 
-        public T Create()
+        public DbContextFactory(IDatabaseInitializer<T> dbInitializer, DbConnection connection)
+        {
+            this.dbInitializer = dbInitializer;
+            this.connection = connection;
+        }
+        
+
+        public virtual T Create()
         {
             if (!hasSetInitializer)
             {
@@ -35,7 +46,16 @@ namespace SSW.Data.EF
                 hasSetInitializer = true;
             }
 
-            var args = new Object[] { connectionString };
+            Object[] args;
+            if (this.connection != null) // are we using a dBconnection or a Connection string?
+            {
+                args = new Object[] { this.connection };
+            }
+            else
+            {
+                args = new Object[] { connectionString };
+            }
+
             return (T)Activator.CreateInstance(typeof(T), args);
         }
     }
