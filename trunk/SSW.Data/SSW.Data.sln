@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.Data.DbContext.Generato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.Data.Tests.Integration", "SSW.Data.Tests.Integration\SSW.Data.Tests.Integration.csproj", "{202AAABE-5D98-4837-A791-D76FCBF3B9EE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{42EBB6A8-655F-4953-B6B7-6D48796D12E6}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\SSW Data Onion.docx = Documentation\SSW Data Onion.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

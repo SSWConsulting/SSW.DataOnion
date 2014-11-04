@@ -22,7 +22,7 @@
         public YourDbContext()
             : base("name=YourConnectionStringName")
         {
-            
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         /// <summary>
@@ -44,7 +44,6 @@
         public YourDbContext(string connectionString)
             : base(connectionString)
         {
-			this.Configuration.LazyLoadingEnabled = true;
         }
 
         
