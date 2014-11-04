@@ -31,14 +31,25 @@ namespace SSW.Data.Tests.Integration.DependencyResolution
 
             builder.RegisterType<DbContextManager<TestDbContext>>()
                 .As<IDbContextManager<TestDbContext>>()
-                .As<IDbContextManager>();
+                .As<IDbContextManager>().InstancePerLifetimeScope();
 
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
 
             // Local Assembly scan for Repositories
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces();
+
+
+
+            // scan local assembly for all our bdd classes
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .Where(t => t.Namespace.EndsWith("RepositoryTests"));
+
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+               .Where(t => t.Namespace.EndsWith("UnitOfWorkTests"));  
+
+      
 
         }
     }

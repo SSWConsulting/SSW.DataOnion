@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SSW.Data.EF;
 using SSW.Data.Interfaces;
 using SSW.Data.Tests.Integration.DependencyResolution;
+using SSW.Data.Tests.Integration.RepositoryInterfaces;
 using TestStack.BDDfy;
 using SSW.Data.Tests.DomainModel.Entities;
 
@@ -19,7 +20,7 @@ namespace SSW.Data.Tests.Integration
 
         void WhenTheConfigurationIsLoaded()
         {
-            container = IOC.Configure();
+            Assert.IsNotNull(container);
         }
         
 
@@ -42,15 +43,17 @@ namespace SSW.Data.Tests.Integration
 
         void AndThenIHaveARepository()
         {
-            Assert.IsNotNull(container.Resolve<IRepository<Entity2>>());
+            Assert.IsNotNull(container.Resolve<ITestEntity1Repository>());
         }
 
 
         [TestMethod]
-        public void Execute()
+        public void TestConfiguration()
         {
-            this.BDDfy();
+            using(container = IOC.Configure())
+            {
+                this.BDDfy();
+            }
         }
-
     }
 }

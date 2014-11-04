@@ -9,11 +9,7 @@ namespace SSW.Data.Tests.Integration
 
 	public partial class TestDbContext
 	{
-		public IDbSet<Entity2> Entity2s { get; set; }
-
-		public IDbSet<Entity3> Entity3s { get; set; }
-
-		public IDbSet<Entity4> Entity4s { get; set; }
+		public IDbSet<TestEntity1> TestEntity1s { get; set; }
 
 	}
 }
