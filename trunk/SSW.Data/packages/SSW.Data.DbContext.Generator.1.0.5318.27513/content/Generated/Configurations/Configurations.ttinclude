@@ -1,0 +1,12 @@
+﻿<#+
+public static partial class Configurations
+{
+	//Generator configurations
+	public const string BaseEntityClass = @""; // optional base class to filter only entities that inherit from specific base class
+	public const string DomainModelProjectDll = @"SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
+	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.DomainModel.Entities"; // custom domain model namespace. ususally the same as dll name
+	public const string DbContextName = @"TestDbContext"; // name of your db context
+	public const string DataProjectNamespace = @"SSW.Data"; // namespace to be used by generated db context
+}
+#>
+

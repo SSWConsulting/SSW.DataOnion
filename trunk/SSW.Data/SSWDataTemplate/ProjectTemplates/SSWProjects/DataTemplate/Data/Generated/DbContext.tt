@@ -1,0 +1,51 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="System.Windows.Forms" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<#@ include file="Configurations\DbContextConfigurations.ttinclude" #>
+
+namespace <#=Configurations.DataProjectNamespace#>
+{
+	using System.Data.Entity;
+	using <#=Configurations.DomainModelProjectNamespace#>;
+
+	using SSW.Data.Entities;
+
+	public partial class <#=Configurations.DbContextName#>
+	{
+<#
+	Type[] entityTypes;
+	
+	var assembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
+
+	if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
+	{
+		var baseEntityAssembly = Assembly.LoadFrom(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
+		Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
+		entityTypes = assembly.GetTypes()
+                        .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
+                        .ToArray();
+	} 
+	else 
+	{
+		entityTypes = assembly.GetTypes().Where(t => !t.IsAbstract).ToArray();
+    }
+
+	foreach (var entityType in entityTypes)	        
+	{
+#>
+		public IDbSet<<#=entityType.Name#>> <#=entityType.Name#>s { get; set; }
+
+<#
+	}
+#>
+	}
+}
+

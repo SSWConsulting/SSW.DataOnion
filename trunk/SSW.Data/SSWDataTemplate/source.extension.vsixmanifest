@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+	<Metadata>
+		<Identity Id="SSWDataTemplate..8398e9e0-33e5-44cb-b092-9a6374b850b9" Version="1.0" Language="en-US" Publisher="Igor Goldobin" />
+		<DisplayName>SSWDataTemplate</DisplayName>
+		<Description xml:space="preserve">SSW Data layer default projects</Description>
+		<Icon>SSWlogo_2014_50w.png</Icon>
+		<PreviewImage>SSWlogo_2014_50w.png</PreviewImage>
+		<Tags>SSW</Tags>
+	</Metadata>
+	<Installation AllUsers="true">
+		<InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Ultimate" />
+		<InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Pro" />
+		<InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Premium" />
+	</Installation>
+	<Dependencies>
+		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+	</Dependencies>
+	<Assets>
+		<Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
+		<Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
+		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="TemplateBuilder.dll" AssemblyName="TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="NuGet.VisualStudio.dll" AssemblyName="NuGet.VisualStudio, Version=2.8.50926.602, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+		<CustomExtension Type="EntityFramework.6.0.0.nupkg">
+			packages/EntityFramework.6.0.0/EntityFramework.6.0.0.nupkg
+		</CustomExtension>
+	</Assets>
+</PackageManifest>
