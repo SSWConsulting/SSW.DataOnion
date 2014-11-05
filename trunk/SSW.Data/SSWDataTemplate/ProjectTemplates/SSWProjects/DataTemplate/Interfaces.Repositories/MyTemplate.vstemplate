@@ -1,0 +1,43 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+	<TemplateData>
+		<Name>Your name here</Name>
+		<Description>Project description here</Description>
+		<DefaultName>$saferootprojectname$.Interfaces.Repositories</DefaultName>
+
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType></ProjectSubType>
+		<SortOrder>1000</SortOrder>
+		<CreateNewFolder>true</CreateNewFolder>
+		<ProvideDefaultName>true</ProvideDefaultName>
+		<LocationField>Enabled</LocationField>
+		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+
+		<!-- Indicates how many parent folders this item template should appear in -->
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+	</TemplateData>
+	<TemplateContent>
+		<Project TargetFileName="$saferootprojectname$.Interfaces.Repositories.csproj" File="SSW.Data1.Interfaces.Repositories.csproj" ReplaceParameters="true">
+		</Project>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>TemplateBuilder.ChildWizard</FullClassName>
+	</WizardExtension>
+  <WizardExtension>
+	<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+	<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="extension" repositoryId="SSWDataTemplate..8398e9e0-33e5-44cb-b092-9a6374b850b9">
+      <package id="EntityFramework" version="6.0.0" targetFramework="net451" />
+	  <package id="EntityFramework.BulkInsert-ef6" version="6.0.2.8" targetFramework="net451" />
+	  <package id="EntityFramework.MappingAPI" version="6.0.0.7" targetFramework="net451" />
+	  <package id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net451" />
+	  <package id="NuGet.Core" version="2.8.2" targetFramework="net451" />
+	  <package id="SSW.Common" version="1.0.5317.31877" targetFramework="net451" />
+	  <package id="SSW.Data.EF" version="1.0.5317.32108" targetFramework="net451" />
+	  <package id="SSW.Data.Entities" version="1.0.5317.30052" targetFramework="net451" />
+	  <package id="SSW.Data.RepositoryInterfaces.Generator" version="1.1.5318.30300" targetFramework="net451" />
+	</packages>
+  </WizardData>
+</VSTemplate>

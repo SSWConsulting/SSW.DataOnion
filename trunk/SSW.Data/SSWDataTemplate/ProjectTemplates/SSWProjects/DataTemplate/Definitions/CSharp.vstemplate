@@ -1,0 +1,23 @@
+<VSTemplate Version="2.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+
+	<!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
+
+	<TemplateData>
+		<Name>SSW Data Project</Name>
+		<Description>Creates data layer</Description>
+		<ProjectType>CSharp</ProjectType>
+		<DefaultName>SSWDataLayer</DefaultName>
+		<SortOrder>5000</SortOrder>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectCollection>
+			<ProjectTemplateLink ProjectName="$safeprojectname$.Data">Data\MyTemplate.vstemplate</ProjectTemplateLink>
+			<ProjectTemplateLink ProjectName="$safeprojectname$.DomainModel">DomainModel\MyTemplate.vstemplate</ProjectTemplateLink>
+			<ProjectTemplateLink ProjectName="$safeprojectname$.Interfaces.Repositories">Interfaces.Repositories\MyTemplate.vstemplate</ProjectTemplateLink>
+		</ProjectCollection>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>TemplateBuilder.RootWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>
