@@ -62,8 +62,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreatePackage.bat" />
-    <None Include="CreatePackageAndPublish.bat" />
+    <None Include="CreatePackage.ps1" />
+    <None Include="CreatePackageAndPublish.ps1" />
     <None Include="packages.config" />
     <None Include="SSW.Data.Entities.nuspec">
       <SubType>Designer</SubType>

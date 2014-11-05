@@ -22,7 +22,7 @@ namespace SSW.Data.Tests.Integration
         public TestDbContext()
             : base("name=YourConnectionStringName")
         {
-            this.Configuration.LazyLoadingEnabled = true;
+            
         }
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace SSW.Data.Tests.Integration
         public TestDbContext(string connectionString)
             : base(connectionString)
         {
+			this.Configuration.LazyLoadingEnabled = true;
         }
 
         

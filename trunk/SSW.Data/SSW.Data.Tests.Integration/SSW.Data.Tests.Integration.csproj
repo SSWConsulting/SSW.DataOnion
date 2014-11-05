@@ -71,23 +71,29 @@
     <Reference Include="SSW.Common">
       <HintPath>..\packages\SSW.Common.1.0.5317.31877\lib\net45\SSW.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.DbContext.Generator">
-      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.1.5420.29151\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
+    <Reference Include="SSW.Data.DbContext.Generator, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.DbContext.Generator.1.2.1.0\lib\net45\SSW.Data.DbContext.Generator.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.EF">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5421.18985\lib\net45\SSW.Data.EF.dll</HintPath>
+    <Reference Include="SSW.Data.EF, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.EF.1.2.1.0\lib\net45\SSW.Data.EF.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Entities">
-      <HintPath>..\packages\SSW.Data.Entities.1.0.5420.27860\lib\net45\SSW.Data.Entities.dll</HintPath>
+    <Reference Include="SSW.Data.Entities, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.Entities.1.2.1.0\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Interfaces">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5421.18985\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+    <Reference Include="SSW.Data.Interfaces, Version=1.0.5422.20257, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.EF.1.2.1.0\lib\net45\SSW.Data.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Repositories.Generator">
-      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.1.5421.19002\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
+    <Reference Include="SSW.Data.Repositories.Generator, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.Repositories.Generator.1.2.2.0\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.RepositoryInterfaces.Generator">
-      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.1.5421.18990\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
+    <Reference Include="SSW.Data.RepositoryInterfaces.Generator, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.RepositoryInterfaces.Generator.1.2.2.0\lib\net45\SSW.Data.RepositoryInterfaces.Generator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -116,22 +122,19 @@
     <Compile Include="EffortConnectionFactory.cs" />
     <Compile Include="ConfigurationTests.cs" />
     <Compile Include="Generated\DbContext.cs">
-      <DependentUpon>DbContext.tt</DependentUpon>
-      <SubType>Code</SubType>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Repositories.cs">
-      <DependentUpon>Repositories.tt</DependentUpon>
-      <SubType>Code</SubType>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Repositories.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\RepositoryInterfaces.cs">
-      <DependentUpon>RepositoryInterfaces.tt</DependentUpon>
-      <SubType>Code</SubType>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryInterfaces.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryTestRunner.cs" />
@@ -144,8 +147,11 @@
     <None Include=".nuget\nuget.config" />
     <None Include="App.config" />
     <None Include="Generated\Configurations\DbContextConfigurations.ttinclude" />
+    <None Include="Generated\Configurations\DbContextConfigurations.ttinclude.zz" />
     <None Include="Generated\Configurations\RepositoriesConfigurations.ttinclude" />
+    <None Include="Generated\Configurations\RepositoriesConfigurations.ttinclude.zz" />
     <None Include="Generated\Configurations\RepositoryInterfacesConfigurations.ttinclude" />
+    <None Include="Generated\Configurations\RepositoryInterfacesConfigurations.ttinclude.zz" />
     <None Include="Generated\DbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DbContext.cs</LastGenOutput>

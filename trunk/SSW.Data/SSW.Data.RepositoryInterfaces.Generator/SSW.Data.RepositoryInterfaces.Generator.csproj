@@ -91,8 +91,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RepositoryInterfaces.cs</LastGenOutput>
     </Content>
-    <None Include="CreatePackage.bat" />
-    <None Include="CreatePackageAndPublish.bat" />
+    <None Include="CreatePackage.ps1" />
+    <None Include="CreatePackageAndPublish.ps1" />
     <None Include="packages.config" />
     <None Include="SSW.Data.SqlFileRepository.nuspec">
       <SubType>Designer</SubType>

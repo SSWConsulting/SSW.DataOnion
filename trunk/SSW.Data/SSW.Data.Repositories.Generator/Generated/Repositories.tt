@@ -7,6 +7,7 @@
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Diagnostics" #>
 <#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Linq.Expressions" #>
 <#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #> 
 <#@ include file="Configurations\RepositoriesConfigurations.ttinclude" #>
@@ -19,28 +20,12 @@ using SSW.Data.EF;
 namespace <#=Configurations.RepositoriesProjectNamespace#>
 {
 <#
-	Type[] entityTypes;
-	
-	var proxyDomain = new ProxyDomain();
-	var assembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.DomainModelProjectDll));
-
-	if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
-	{
-		var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(Host.ResolvePath(@"..\bin\Debug"), Configurations.BaseEntityClassDll));
-		Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
-		entityTypes = assembly.GetTypes()
-                        .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
-                        .ToArray();
-	} 
-	else 
-	{
-		entityTypes = assembly.GetTypes().Where(t => !t.IsAbstract).ToArray();
-    }
+	var entityTypes = AssemblyHelper.GetDomainTypes(Host.ResolvePath(@"..\bin\Debug"));
 
 	foreach (var entityType in entityTypes)	        
 	{
 #>
-	public partial class <#=entityType.Name#>Repository : BaseRepository<<#=entityType.Name#>>, I<#=entityType.Name#>Repository
+	public partial class <#=entityType.Name#>Repository : <#=Configurations.BaseRepositoryName#><<#=entityType.Name#>>, I<#=entityType.Name#>Repository
 	{
 		public <#=entityType.Name#>Repository(IDbContextManager contextmanager)
 			: base(contextmanager)
@@ -65,6 +50,41 @@ public class ProxyDomain : MarshalByRefObject
         {
 			throw new InvalidOperationException(ex.Message);
         }
+    }
+}
+
+public static partial class AssemblyHelper 
+{
+	public static Type[] GetDomainTypes(string binFolderPath)
+	{
+		Type[] entityTypes;
+	
+		try 
+		{
+			var proxyDomain = new ProxyDomain();
+			var assembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.DomainModelProjectDll));
+
+			if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
+			{
+				var func = Configurations.DomainTypeFilter;
+				var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.BaseEntityClassDll));
+				Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
+				entityTypes = assembly.GetTypes()
+								.Where(t => baseType == null || (baseType.IsAssignableFrom(t) && t != baseType))
+								.Where(t => func(t))
+								.ToArray();
+			} 
+			else 
+			{
+				entityTypes = assembly.GetTypes().Where(t => !t.IsAbstract).ToArray();
+			}
+        }
+		catch
+		{
+			throw;
+        }
+
+		return entityTypes;
     }
 }
 #>
