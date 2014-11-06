@@ -38,6 +38,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", 
 		PublishAll.ps1 = PublishAll.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{6657E685-28AE-447A-A5F5-EEAE4BE22752}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\images\DataOnion1.png = Documentation\images\DataOnion1.png
+		Documentation\images\Onion-Architecture.jpg = Documentation\images\Onion-Architecture.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,5 +93,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F6F5F9BA-FEB2-482A-BBA9-21068142860C} = {672F8048-21ED-47E4-A53F-1282A374C795}
 		{202AAABE-5D98-4837-A791-D76FCBF3B9EE} = {672F8048-21ED-47E4-A53F-1282A374C795}
+		{6657E685-28AE-447A-A5F5-EEAE4BE22752} = {42EBB6A8-655F-4953-B6B7-6D48796D12E6}
 	EndGlobalSection
 EndGlobal
