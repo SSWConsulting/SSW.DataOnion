@@ -14,7 +14,7 @@
 		<tags>EF</tags>
 
 		<dependencies>
-			<dependency id="SSW.Data.Entities" version="1.0.0" />
+			<dependency id="SSW.Data.Entities" version="1.2.2" />
 		</dependencies>
 	</metadata>
 

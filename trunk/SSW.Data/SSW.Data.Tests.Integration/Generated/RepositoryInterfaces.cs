@@ -1,4 +1,4 @@
-﻿ 
+ 
 
 using SSW.Data.Tests.DomainModel.Entities;
 

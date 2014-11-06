@@ -1,12 +1,12 @@
 <#+
 public static partial class Configurations
 {
-	// OPTIONAL BASE TYPE FILTER - LEAVE BLANK IF NOT USED
+		// OPTIONAL BASE TYPE FILTER - LEAVE BLANK IF NOT USED
 	public const string BaseEntityClass = @""; // optional base entity to filter only entities that inherit from specific base class
 	public const string BaseEntityClassDll = @""; // optional base entity dll to filter only entities that inherit from specific base class
 	///////////////////////////////////////////
 	
-	public const string DomainModelProjectDll = @"..\..\..\SSW.Data.Tests.DomainModel\bin\Debug\SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
+	public const string DomainModelProjectDll = @"SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
 	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.DomainModel.Entities"; // custom domain model namespace, usualy the same as dll name
 	public const string DbContextName = @"TestDbContext"; // name of your db context
 	public const string DataProjectNamespace = @"SSW.Data.Tests.Integration"; // namespace to be used by generated db context
@@ -25,6 +25,7 @@ public static partial class Configurations
 			return func;
 		} 
 	}
+
 }
 #>
 
