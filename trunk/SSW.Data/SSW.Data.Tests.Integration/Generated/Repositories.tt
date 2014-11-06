@@ -1,4 +1,4 @@
-﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ template debug="true" hostSpecific="true" #>
 <#@ output extension=".cs" #>
 <#@ Assembly Name="System.Core" #>
 <#@ Assembly Name="System.Windows.Forms" #>
@@ -59,22 +59,31 @@ public static partial class AssemblyHelper
 	{
 		Type[] entityTypes;
 	
-		var proxyDomain = new ProxyDomain();
-		var assembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.DomainModelProjectDll));
+		try 
+		{
+			var proxyDomain = new ProxyDomain();
+			var assembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.DomainModelProjectDll));
 
-		if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
-		{
 			var func = Configurations.DomainTypeFilter;
-			var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.BaseEntityClassDll));
-			Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
-			entityTypes = assembly.GetTypes()
-							.Where(t => baseType == null || (baseType.IsAssignableFrom(t) && t != baseType))
-							.Where(t => func(t))
-							.ToArray();
-		} 
-		else 
+
+		    var queryable = assembly.GetTypes()
+				.Where(t => string.IsNullOrEmpty(Configurations.DomainModelProjectNamespace) || t.Namespace.StartsWith(Configurations.DomainModelProjectNamespace))
+				.Where(t => func(t));
+
+		    if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
+			{
+				var baseEntityAssembly = proxyDomain.GetAssembly(Path.Combine(binFolderPath, Configurations.BaseEntityClassDll));
+				Type baseType = baseEntityAssembly.GetTypes().First(t => t.Name == Configurations.BaseEntityClass);
+
+				queryable  = queryable.Where(t => baseType == null || (baseType.IsAssignableFrom(t) && t != baseType));
+			}
+
+			entityTypes = queryable.ToArray();
+			
+        }
+		catch
 		{
-			entityTypes = assembly.GetTypes().Where(t => !t.IsAbstract).ToArray();
+			throw;
         }
 
 		return entityTypes;

@@ -87,12 +87,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="Generated\Configurations\RepositoryInterfacesConfigurations.ttinclude.pp" />
-    <Content Include="Generated\RepositoryInterfaces.tt">
+    <None Include="CreatePackage.ps1" />
+    <None Include="CreatePackageAndPublish.ps1" />
+    <Content Include="Generated\RepositoryInterfaces.tt.pp">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RepositoryInterfaces.cs</LastGenOutput>
     </Content>
-    <None Include="CreatePackage.ps1" />
-    <None Include="CreatePackageAndPublish.ps1" />
     <None Include="packages.config" />
     <None Include="SSW.Data.SqlFileRepository.nuspec">
       <SubType>Designer</SubType>

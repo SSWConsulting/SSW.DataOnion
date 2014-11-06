@@ -70,12 +70,12 @@
     <Content Include="readme.txt" />
     <None Include="App.config" />
     <Content Include="Generated\Configurations\DbContextConfigurations.ttinclude.pp" />
-    <Content Include="Generated\DbContext.tt">
+    <None Include="CreatePackage.ps1" />
+    <None Include="CreatePackageAndPublish.ps1" />
+    <Content Include="Generated\DbContext.tt.pp">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DbContext.cs</LastGenOutput>
     </Content>
-    <None Include="CreatePackage.ps1" />
-    <None Include="CreatePackageAndPublish.ps1" />
     <None Include="packages.config" />
     <None Include="SSW.Data.DbContext.Generator.nuspec">
       <SubType>Designer</SubType>

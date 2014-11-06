@@ -6,9 +6,10 @@ public static partial class Configurations
 	public const string BaseEntityClassDll = @""; // optional base entity dll to filter only entities that inherit from specific base class
 	///////////////////////////////////////////
 	
-	public const string DomainModelProjectDll = @"..\..\..\SSW.Data.Tests.DomainModel\bin\Debug\SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
+	public const string DomainModelProjectDll = @"SSW.Data.Tests.DomainModel.dll"; // dll file name for domain models
 	public const string DomainModelProjectNamespace = @"SSW.Data.Tests.DomainModel.Entities"; // custom domain model namespace, usualy the same as dll name
 	public const string RepositoryInterfacesProjectNamespace = @"SSW.Data.Tests.Integration.RepositoryInterfaces"; // namespace to be used by generated repository interfaces
+	public const string RepositoriesProjectNamespace = @"SSW.Data.Tests.Integration.Repositories"; // namespace to be used by generated repositories
 
 	/////////////////////////////////////////////////////////////////////
 	// Use this only if you want to apply custom domain class filtering. 
