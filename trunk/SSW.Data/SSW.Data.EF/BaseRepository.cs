@@ -51,7 +51,7 @@
         /// Gets the database set.
         /// </summary>
         /// <value>The database set.</value>
-        private IDbSet<T> DbSet
+        protected IDbSet<T> DbSet
         {
             get { return this.Context.Set<T>(); }
         }
