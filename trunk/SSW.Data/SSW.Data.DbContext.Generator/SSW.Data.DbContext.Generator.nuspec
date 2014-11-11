@@ -14,7 +14,7 @@
 		<language>en-AU</language>
 		<tags>EF</tags>
 		<dependencies>
-			<dependency id="SSW.Data.Entities" version="1.2.2" />
+			<dependency id="SSW.Data.Entities" version="1.2.5" />
 		</dependencies>
 	</metadata>
 

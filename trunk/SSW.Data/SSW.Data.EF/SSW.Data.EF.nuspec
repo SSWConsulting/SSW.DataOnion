@@ -16,7 +16,7 @@
 
 		<dependencies>
 			<dependency id="EntityFramework" version="6.1" />
-			<dependency id="SSW.Data.Entities" version="1.0.0" />
+			<dependency id="SSW.Data.Entities" version="1.2.5" />
 		</dependencies>
 	</metadata>
 </package>
