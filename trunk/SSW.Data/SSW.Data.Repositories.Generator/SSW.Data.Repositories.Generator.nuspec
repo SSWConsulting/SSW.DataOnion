@@ -2,6 +2,7 @@
 <package>
 	<metadata>
 		<id>SSW.Data.Repositories.Generator</id>
+		<projectUrl>http://www.sswdataonion.com</projectUrl>
 		<version>$version$</version>
 		<title>SSW.Data.Repositories.Generator</title>
 		<authors>Igor Goldobin, Brendan Richards</authors>

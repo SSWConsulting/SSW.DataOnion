@@ -2,6 +2,7 @@
 <package>
 	<metadata>
 		<id>SSW.Data.Entities</id>
+		<projectUrl>http://www.sswdataonion.com</projectUrl>
 		<version>$version$</version>
 		<title>SSW.Data.Entities</title>
 		<authors>Igor Goldobin</authors>
