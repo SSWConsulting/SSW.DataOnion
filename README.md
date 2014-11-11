@@ -34,15 +34,9 @@ Each of the above packages can be installed from Nuget.
 
 PM> Install-Package SSW.Data.Repositories.Generator
 
-&nbsp;
-
-&nbsp;
-
 ## Code Generator Configuration
 
 Each code generator package is configured by a .ttinclude file.
-
-&nbsp;
 
 ### DbContext.Generator
 
@@ -86,8 +80,6 @@ Namespace for generated repository interfaces
 
 **DomainTypeFilter**
 Edit this Func&lt;&gt; to customize which domain classes to include when generating.
-
-&nbsp;
 
 ### Repositories.Generator
 
