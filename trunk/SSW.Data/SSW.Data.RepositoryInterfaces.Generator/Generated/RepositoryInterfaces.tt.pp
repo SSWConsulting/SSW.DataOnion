@@ -12,8 +12,14 @@
 <#@ import namespace="System.Collections.Generic" #> 
 <#@ include file="Configurations\RepositoryInterfacesConfigurations.ttinclude" #>
 
-using <#=Configurations.DomainModelProjectNamespace#>;
-
+<#
+foreach (string entityNamespace in Configurations.DomainModelProjectNamespace.Split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries))	        
+{
+#>
+using <#=entityNamespace#>;
+<# 
+}
+#>
 using SSW.Data.Interfaces;
 
 namespace <#=Configurations.RepositoryInterfacesProjectNamespace#>
@@ -53,6 +59,7 @@ public static partial class AssemblyHelper
 	public static Type[] GetDomainTypes(string binFolderPath)
 	{
 		Type[] entityTypes;
+		var entityNamespaces = Configurations.DomainModelProjectNamespace.Split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries).ToList();
 	
 		try 
 		{
@@ -62,7 +69,7 @@ public static partial class AssemblyHelper
 			var func = Configurations.DomainTypeFilter;
 
 		    var queryable = assembly.GetTypes()
-				.Where(t => string.IsNullOrEmpty(Configurations.DomainModelProjectNamespace) || t.Namespace.StartsWith(Configurations.DomainModelProjectNamespace))
+				.Where(t => string.IsNullOrEmpty(Configurations.DomainModelProjectNamespace) || entityNamespaces.Any(n => t.Namespace.StartsWith(n)))
 				.Where(t => func(t));
 
 		    if (!string.IsNullOrEmpty(Configurations.BaseEntityClass))
