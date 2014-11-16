@@ -2,6 +2,7 @@
 <package>
 	<metadata>
 		<id>SSW.Data.Repositories.Generator</id>
+		<projectUrl>http://www.sswdataonion.com</projectUrl>
 		<version>$version$</version>
 		<title>SSW.Data.Repositories.Generator</title>
 		<authors>Igor Goldobin, Brendan Richards</authors>
@@ -14,7 +15,8 @@
 		<tags>EF</tags>
 
 		<dependencies>
-			<dependency id="SSW.Data.Entities" version="1.2.2" />
+			<dependency id="SSW.Data.Entities" version="1.2.6" />
+			<dependency id="SSW.Data.EF" version="1.2.6" />
 		</dependencies>
 	</metadata>
 

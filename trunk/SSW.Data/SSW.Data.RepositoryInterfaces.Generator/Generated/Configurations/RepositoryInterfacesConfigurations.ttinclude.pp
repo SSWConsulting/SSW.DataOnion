@@ -7,7 +7,7 @@ public static partial class Configurations
 	///////////////////////////////////////////
 	
 	public const string DomainModelProjectDll = @"$rootnamespace$.DomainModel.dll"; // dll file name for domain models
-	public const string DomainModelProjectNamespace = @"$rootnamespace$.DomainModel.Entities"; // custom domain model namespace, usualy the same as dll name
+	public const string DomainModelProjectNamespace = @"$rootnamespace$.DomainModel.Entities"; // custom domain model namespace, usualy the same as dll name. Accepts comma-separated list
 	public const string RepositoryInterfacesProjectNamespace = @"$rootnamespace$.Interfaces.Repositories"; // namespace to be used by generated repository interfaces
 	
 	/////////////////////////////////////////////////////////////////////

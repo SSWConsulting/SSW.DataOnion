@@ -2,6 +2,7 @@
 <package>
 	<metadata>
 		<id>SSW.Data.EF</id>
+		<projectUrl>http://www.sswdataonion.com</projectUrl>
 		<version>$version$</version>
 		<title>SSW.Data.EF</title>
 		<authors>Igor Goldobin</authors>
@@ -15,7 +16,7 @@
 
 		<dependencies>
 			<dependency id="EntityFramework" version="6.1" />
-			<dependency id="SSW.Data.Entities" version="1.0.0" />
+			<dependency id="SSW.Data.Entities" version="1.2.5" />
 		</dependencies>
 	</metadata>
 </package>
