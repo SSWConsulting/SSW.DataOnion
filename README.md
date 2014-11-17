@@ -8,9 +8,13 @@ For more information, please visit [http://www.sswdataonion.com](http://www.sswd
 
 One core consideration for implementation under the onion architecture was the ability to place all components in separate projects / assemblies. To allow this, SSW Data Onion is split across multiple Nuget packages. You can install these packages to separate projects (recommended) or you can install to one test project.
 
+### [SSW.Data.Interfaces](https://www.nuget.org/packages/SSW.Data.Interfaces/)
+
+The core IRepository and IUnitOfWork interfaces. This is a very small package but it allows the interfaces to be added to a client project (ie the web layer) without the implementation packages (such as SSW.Data.EF) and without pulling in Entity Framework.
+
 ### [SSW.Data.EF](https://www.nuget.org/packages/SSW.Data.EF/)
 
-This is SSW’s core Entity Framework package.
+This is SSW’s core Entity Framework package. This package has Entity Framework as a direct dependency.
 
 ### [SSW.Data.Entities](https://www.nuget.org/packages/SSW.Data.Entities/)
 
