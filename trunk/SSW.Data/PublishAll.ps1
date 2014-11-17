@@ -1,3 +1,10 @@
+
+echo "Publish SSW.Data.Interfaces"
+cd SSW.Data.Interfaces
+.\CreatePackageAndPublish.ps1
+cd..
+
+
 echo "Publish SSW.Data.Entities"
 cd SSW.Data.Entities
 .\CreatePackageAndPublish.ps1
