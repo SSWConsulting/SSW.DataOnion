@@ -1,26 +1,21 @@
 ﻿<?xml version="1.0"?>
 <package>
 	<metadata>
-		<id>SSW.Data.Repositories.Generator</id>
+		<id>SSW.Data.Interfaces</id>
 		<projectUrl>http://www.sswdataonion.com</projectUrl>
 		<version>$version$</version>
-		<title>SSW.Data.Repositories.Generator</title>
+		<title>SSW.Data.Interfaces</title>
 		<authors>Igor Goldobin, Brendan Richards</authors>
 		<iconUrl>http://www.gravatar.com/avatar/81d58a12bc544f1b4ea6f48200f665e0.png</iconUrl>
 		<owners>SSW</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>T4 templates for generating repositories based on domain model.</description>
+		<description>Base interfaces for Unit of work and Repository Pattern. This is a separate, small package allowing DataOnion to be added to client projects without all the implementation dependencies.</description>
 		<copyright />
 		<language>en-AU</language>
 		<tags>EF</tags>
 
 		<dependencies>
-			<dependency id="SSW.Data.Entities" version="1.2" />
-			<dependency id="SSW.Data.Interfaces" version="1.0" />
 		</dependencies>
+    
 	</metadata>
-
-	<files>
-		<file src="Generated*.*" target="Generated" />
-	</files>
 </package>

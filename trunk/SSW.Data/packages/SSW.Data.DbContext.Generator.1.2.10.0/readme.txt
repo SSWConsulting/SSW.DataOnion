@@ -1,4 +1,5 @@
-﻿NThe following code files:
+﻿
+The following code files:
 
 Generated/Configurations/DbContextConfigurations.ttinclude
 DbContext.cs

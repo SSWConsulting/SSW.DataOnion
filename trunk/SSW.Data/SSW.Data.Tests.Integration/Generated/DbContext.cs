@@ -14,8 +14,6 @@ namespace SSW.Data.Tests.Integration
 	{
 		public IDbSet<TestEntity1> TestEntity1s { get; set; }
 
-		public IDbSet<TestEntity2> TestEntity2s { get; set; }
-
 	}
 }
 
