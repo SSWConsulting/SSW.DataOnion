@@ -14,4 +14,4 @@ echo "Cleaning up old packages..."
 del *.nupkg
 
 echo "Building and packaging new version of package..."
-nuget pack SSW.Data.Interfaces.csproj -Prop Configuration=Release -IncludeReferencedProjects -Build
+nuget pack SSW.Data.Interfaces.csproj -Prop Configuration=Release -Build
