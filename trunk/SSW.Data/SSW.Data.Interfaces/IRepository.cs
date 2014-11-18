@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Repository interface that follows Repository pattern. Exposes basic CRUD
@@ -66,6 +67,22 @@
         void LoadReference<TProperty>(TEntity entity, Expression<Func<TEntity, TProperty>> expression)
             where TProperty : class;
 
+        /// <summary>
+        /// Gets the specified entities filtered by specified filter expression and
+        /// loaded with specified dependent objects.
+        /// </summary>
+        /// <param name="filter">The filter to be used in Where clause.</param>
+        /// <param name="includes">The related objects to be loaded.</param>
+        /// <returns>Materialized result set.</returns>
+        Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes);
+
+        /// <summary>
+        /// Finds the entity by id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns>Found entity</returns>
+        Task<TEntity> FindAsync(object id);
+
         #endregion
 
         #region Modification Methods
@@ -101,16 +118,10 @@
         void Delete(object id);
 
         /// <summary>
-        /// De-activates the specified entity by id.
+        /// Perform bulk insert of entities.
         /// </summary>
-        /// <param name="entityToDeactivate">The entity to deactivate.</param>
-        void Deactivate(TEntity entityToDeactivate);
-
-        /// <summary>
-        /// Deletes the specified entity.
-        /// </summary>
-        /// <param name="entityToDelete">The entity to delete.</param>
-        void Delete(TEntity entityToDelete);
+        /// <param name="entities">The entities.</param>
+        Task BulkInsertAsync(IEnumerable<TEntity> entities);
 
         // SAVE is not implelented in the repository
         //  because we might want to commit changes to the database from 

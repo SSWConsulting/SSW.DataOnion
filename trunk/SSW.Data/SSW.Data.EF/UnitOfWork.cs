@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Data.Entity.Validation;
     using System.Data.SqlClient;
+    using System.Threading.Tasks;
 
     using SSW.Common;
     using SSW.Common.Exceptions;
@@ -31,6 +32,50 @@
                     if (contextManager.HasContext)
                     {
                         contextManager.Context.SaveChanges();
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                logger.Error(sqlEx.Message, sqlEx);
+                var ex = sqlEx.ToDataOperationException();
+                throw ex;
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException due)
+            {
+                logger.Error(due.Message, due);
+                var ex = due.ToDataOperationException();
+                throw ex;
+
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        logger.Error(string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage), dbEx);
+                    }
+                }
+
+                throw;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message, ex);
+                throw;
+            }
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            try
+            {
+                foreach (var contextManager in this.contextList)
+                {
+                    if (contextManager.HasContext)
+                    {
+                        await contextManager.Context.SaveChangesAsync();
                     }
                 }
             }

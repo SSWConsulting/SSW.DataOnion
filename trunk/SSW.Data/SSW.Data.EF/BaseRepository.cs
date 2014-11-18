@@ -5,6 +5,7 @@
     using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
+    using System.Threading.Tasks;
 
     using EntityFramework.BulkInsert.Extensions;
 
@@ -51,7 +52,7 @@
         /// Gets the database set.
         /// </summary>
         /// <value>The database set.</value>
-        protected IDbSet<T> DbSet
+        protected DbSet<T> DbSet
         {
             get { return this.Context.Set<T>(); }
         }
@@ -110,6 +111,11 @@
         public virtual T Find(object id)
         {
             return this.DbSet.Find(id);
+        }
+
+        public Task<T> FindAsync(object id)
+        {
+            return this.DbSet.FindAsync(id);
         }
 
         /// <summary>
@@ -208,6 +214,11 @@
             this.DbSet.Remove(entityToDelete);
         }
 
+        public async Task BulkInsertAsync(IEnumerable<T> entities)
+        {
+            await Task.Factory.StartNew(() => this.BulkInsert(entities));
+        }
+
         /// <summary>
         /// Updates the specified entity.
         /// </summary>
@@ -241,6 +252,17 @@
         public virtual void LoadReference<TProperty>(T entity, Expression<Func<T, TProperty>> expression) where TProperty : class
         {
             this.Context.Entry(entity).Reference(expression).Load();
+        }
+
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> filter, params Expression<Func<T, object>>[] includes)
+        {
+            var get = this.Get();
+            foreach (var include in includes)
+            {
+                get.Include(include);
+            }
+
+            return await get.Where(filter).ToListAsync();
         }
     }
 }

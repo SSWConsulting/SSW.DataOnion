@@ -64,7 +64,7 @@
     </Reference>
     <Reference Include="SSW.Data.Interfaces, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SSW.Data.Interfaces.1.0.3.0\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+      <HintPath>..\SSW.Data.Interfaces\obj\Debug\SSW.Data.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
