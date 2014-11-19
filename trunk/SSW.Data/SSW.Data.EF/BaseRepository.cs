@@ -131,7 +131,7 @@
         /// Activates the specified entity by id.
         /// </summary>
         /// <param name="entityToActivate">The entity to activate.</param>
-        public void Activate(T entityToActivate)
+        public virtual void Activate(T entityToActivate)
         {
             var baseEntity = entityToActivate as IDeletableEntity;
 
@@ -182,7 +182,7 @@
         /// De-activates the specified entity by id.
         /// </summary>
         /// <param name="entityToDeactivate">The entity to deactivate.</param>
-        public void Deactivate(T entityToDeactivate)
+        public virtual void Deactivate(T entityToDeactivate)
         {
             var baseEntity = entityToDeactivate as IDeletableEntity;
 

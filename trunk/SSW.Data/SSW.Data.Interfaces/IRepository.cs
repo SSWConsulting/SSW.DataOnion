@@ -123,6 +123,12 @@
         /// <param name="entities">The entities.</param>
         Task BulkInsertAsync(IEnumerable<TEntity> entities);
 
+        /// <summary>
+        /// Deactivates the specified entity by setting IsDeleted to true.
+        /// </summary>
+        /// <param name="entityToDectivate">The entity to deactivate.</param>
+        void Deactivate(TEntity entityToDectivate);
+
         // SAVE is not implelented in the repository
         //  because we might want to commit changes to the database from 
         //  multiple repositories, save is called from the EfUnitOfWork

@@ -11,6 +11,17 @@ namespace SSW.Data.Entities.ExtendedEntities
 
     public abstract class StaticEntity : BaseEntity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StaticEntity"/> class.
+        /// </summary>
+        protected StaticEntity()
+        {
+            CreatedBy = "System";
+            LastModifiedBy = "System";
+            DateCreated = DateTime.Now;
+            LastModifiedDate = DateTime.Now;
+        }
+
         [MaxLength(500)]
         public string Name { get; set; }
 

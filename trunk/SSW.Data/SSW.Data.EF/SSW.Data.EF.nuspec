@@ -17,6 +17,7 @@
 		<dependencies>
 			<dependency id="EntityFramework" version="6.1" />
 			<dependency id="SSW.Data.Entities" version="1.2.5" />
+			<dependency id="SSW.Data.Interfaces" version="1.0.7" />
 			<dependency id="SSW.AnalyticsInterface.Core" version="1.0.3" />
 		</dependencies>
 	</metadata>

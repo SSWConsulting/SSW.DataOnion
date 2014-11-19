@@ -80,8 +80,9 @@
     <Reference Include="SSW.Data.Entities">
       <HintPath>..\packages\SSW.Data.Entities.1.2.12.0\lib\net45\SSW.Data.Entities.dll</HintPath>
     </Reference>
-    <Reference Include="SSW.Data.Interfaces">
-      <HintPath>..\packages\SSW.Data.EF.1.0.5332.26403\lib\net45\SSW.Data.Interfaces.dll</HintPath>
+    <Reference Include="SSW.Data.Interfaces, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSW.Data.Interfaces.1.0.7.0\lib\net45\SSW.Data.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="SSW.Data.Repositories.Generator">
       <HintPath>..\packages\SSW.Data.Repositories.Generator.1.2.12.0\lib\net45\SSW.Data.Repositories.Generator.dll</HintPath>
