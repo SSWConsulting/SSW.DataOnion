@@ -12,18 +12,18 @@
 
     public class UnitOfWork : IUnitOfWork
     {
-        IEnumerable<IDbContextManager> contextList;
+        internal IEnumerable<IDbContextManager> contextList;
 
-        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        internal static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private bool disposed;
+        internal bool disposed;
 
         public UnitOfWork(IEnumerable<IDbContextManager> contextList)
         {
             this.contextList = contextList;
         }
 
-        public void SaveChanges()
+        public virtual void SaveChanges()
         {
             try
             {
@@ -32,6 +32,7 @@
                     if (contextManager.HasContext)
                     {
                         contextManager.Context.SaveChanges();
+                        //contextManager.Context.Database.Connection.Database;
                     }
                 }
             }
@@ -67,7 +68,7 @@
             }
         }
 
-        public async Task SaveChangesAsync()
+        public virtual async Task SaveChangesAsync()
         {
             try
             {

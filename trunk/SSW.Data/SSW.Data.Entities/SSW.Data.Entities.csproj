@@ -52,6 +52,7 @@
     <Compile Include="BaseEntity.cs" />
     <Compile Include="ExtendedEntities\Address.cs" />
     <Compile Include="ExtendedEntities\ContactDetails.cs" />
+    <Compile Include="ExtendedEntities\StaticEntity.cs" />
     <Compile Include="Interfaces\IDeletableEntity.cs" />
     <Compile Include="Interfaces\ILookupEntity.cs" />
     <Compile Include="Interfaces\INamedEntity.cs" />
