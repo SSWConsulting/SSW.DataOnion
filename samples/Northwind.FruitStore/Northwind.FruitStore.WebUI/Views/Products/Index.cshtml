@@ -1,0 +1,12 @@
+﻿@using Northwind.FruitStore.DomainModel.Entities
+@model System.Collections.Generic.List<Northwind.FruitStore.DomainModel.Entities.Product>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+@foreach (Product product in Model)
+{
+    <p>@product.Name</p>
+}

@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.WebUI", "Northwind.FruitStore.WebUI\Northwind.FruitStore.WebUI.csproj", "{5388F65D-F0CB-4E88-9494-3AB12376B864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.WebUI.Tests.Unit", "Northwind.FruitStore.WebUI.Tests.Unit\Northwind.FruitStore.WebUI.Tests.Unit.csproj", "{2F447049-E32A-41B3-86E3-9F376B395CF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.DomainModel", "Northwind.FruitStore.DomainModel\Northwind.FruitStore.DomainModel.csproj", "{A3A94F95-23F0-4FAD-94FF-FE2D835159BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.Interfaces.Repositories", "Northwind.FruitStore.Interfaces.Repositories\Northwind.FruitStore.Interfaces.Repositories.csproj", "{434CFC28-494A-4634-93A8-285C1B990930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.Data", "Northwind.FruitStore.Data\Northwind.FruitStore.Data.csproj", "{68674966-0A97-40A5-9D50-23D03CE4AD93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 UI", "01 UI", "{BF9D0046-C7EE-4B6C-B5E5-7DBA4FABA7FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Repository Interfaces", "04 Repository Interfaces", "{EE857AAE-24CE-438B-B0DA-5EC6FB4880E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Domain", "05 Domain", "{B4BED0DD-E9E9-4264-B4E9-FC0A4F505B0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 ----------------", "07 ----------------", "{F2228F0E-C8CF-42D0-AFA4-D701F735B64A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 Dependencies", "09 Dependencies", "{9CBCEAD2-0DFA-46BB-9D8F-C762467D4BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.DomainModel.Tests.Unit", "Northwind.FruitStore.DomainModel.Tests.Unit\Northwind.FruitStore.DomainModel.Tests.Unit.csproj", "{C27F34EA-64D8-4BCB-B238-DC7FB2277B21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 Dependency Resolver", "08 Dependency Resolver", "{867E201D-D585-4AE3-8009-0B70EC7ECB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.DependencyResolvr", "Northwind.FruitStore.DependencyResolvr\Northwind.FruitStore.DependencyResolvr.csproj", "{B51E5F55-9E49-405D-8F90-BD482C2BD672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Business Interfaces", "02 Business Interfaces", "{E1F16C3B-C4E0-445C-9E2A-2C7C219025D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.Interfaces.Business", "Northwind.FruitStore.Interfaces.Business\Northwind.FruitStore.Interfaces.Business.csproj", "{CB17CC05-C3FD-4220-AE15-D363A3737F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.FruitStore.Business", "Northwind.FruitStore.Business\Northwind.FruitStore.Business.csproj", "{226792A1-CF66-4196-B521-CA08C5C3DEEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5388F65D-F0CB-4E88-9494-3AB12376B864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5388F65D-F0CB-4E88-9494-3AB12376B864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5388F65D-F0CB-4E88-9494-3AB12376B864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5388F65D-F0CB-4E88-9494-3AB12376B864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F447049-E32A-41B3-86E3-9F376B395CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F447049-E32A-41B3-86E3-9F376B395CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F447049-E32A-41B3-86E3-9F376B395CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F447049-E32A-41B3-86E3-9F376B395CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A94F95-23F0-4FAD-94FF-FE2D835159BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A94F95-23F0-4FAD-94FF-FE2D835159BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A94F95-23F0-4FAD-94FF-FE2D835159BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A94F95-23F0-4FAD-94FF-FE2D835159BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434CFC28-494A-4634-93A8-285C1B990930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434CFC28-494A-4634-93A8-285C1B990930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434CFC28-494A-4634-93A8-285C1B990930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434CFC28-494A-4634-93A8-285C1B990930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68674966-0A97-40A5-9D50-23D03CE4AD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68674966-0A97-40A5-9D50-23D03CE4AD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68674966-0A97-40A5-9D50-23D03CE4AD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68674966-0A97-40A5-9D50-23D03CE4AD93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27F34EA-64D8-4BCB-B238-DC7FB2277B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27F34EA-64D8-4BCB-B238-DC7FB2277B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27F34EA-64D8-4BCB-B238-DC7FB2277B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27F34EA-64D8-4BCB-B238-DC7FB2277B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51E5F55-9E49-405D-8F90-BD482C2BD672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51E5F55-9E49-405D-8F90-BD482C2BD672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51E5F55-9E49-405D-8F90-BD482C2BD672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51E5F55-9E49-405D-8F90-BD482C2BD672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB17CC05-C3FD-4220-AE15-D363A3737F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB17CC05-C3FD-4220-AE15-D363A3737F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB17CC05-C3FD-4220-AE15-D363A3737F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB17CC05-C3FD-4220-AE15-D363A3737F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{226792A1-CF66-4196-B521-CA08C5C3DEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{226792A1-CF66-4196-B521-CA08C5C3DEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{226792A1-CF66-4196-B521-CA08C5C3DEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{226792A1-CF66-4196-B521-CA08C5C3DEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5388F65D-F0CB-4E88-9494-3AB12376B864} = {BF9D0046-C7EE-4B6C-B5E5-7DBA4FABA7FA}
+		{2F447049-E32A-41B3-86E3-9F376B395CF4} = {BF9D0046-C7EE-4B6C-B5E5-7DBA4FABA7FA}
+		{A3A94F95-23F0-4FAD-94FF-FE2D835159BF} = {B4BED0DD-E9E9-4264-B4E9-FC0A4F505B0D}
+		{434CFC28-494A-4634-93A8-285C1B990930} = {EE857AAE-24CE-438B-B0DA-5EC6FB4880E4}
+		{68674966-0A97-40A5-9D50-23D03CE4AD93} = {9CBCEAD2-0DFA-46BB-9D8F-C762467D4BF3}
+		{C27F34EA-64D8-4BCB-B238-DC7FB2277B21} = {B4BED0DD-E9E9-4264-B4E9-FC0A4F505B0D}
+		{B51E5F55-9E49-405D-8F90-BD482C2BD672} = {867E201D-D585-4AE3-8009-0B70EC7ECB1B}
+		{CB17CC05-C3FD-4220-AE15-D363A3737F45} = {E1F16C3B-C4E0-445C-9E2A-2C7C219025D0}
+		{226792A1-CF66-4196-B521-CA08C5C3DEEA} = {9CBCEAD2-0DFA-46BB-9D8F-C762467D4BF3}
+	EndGlobalSection
+EndGlobal
