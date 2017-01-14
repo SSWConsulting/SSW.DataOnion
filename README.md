@@ -1,3 +1,5 @@
+#Warning: This project has been replaced by [https://github.com/SSWConsulting/SSW.DataOnion2](SSW DataOnion 2)
+
 #SSW.DataOnion
 
 .NET data access layer generator. Includes repositories, interfaces, unit of work and all required generators.
